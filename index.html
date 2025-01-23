@@ -304,10 +304,7 @@
         <div class="logo">D-MEDIA</div>
         <div class="menu">
             <a href="#">DİZİLER</a>
-            <a href="#">PROGRAMLAR</a>
-            <a href="#">D HABER</a>
-            <a href="#">YAYIN AKIŞI</a>
-            <a href="#">DİĞER</a>
+            <a href="#" onclick="openVideo()">ÖZEL BÖLÜMLER</a>
         </div>
         <div class="icons">
             <i class="fas fa-bell"></i>
@@ -391,35 +388,25 @@
         “İnternet sitemizdeki deneyimlerinizi kişiselleştirmek amacıyla kullanılan çerezler bakımından tercihlerinizi nasıl yöneteceğinize (Çerez Politikası) üzerinden bakabilirsiniz, kişisel verilerinizle ilgili daha fazla bilgi için (Gizlilik Politikası’nı) ziyaret edebilirsiniz. Sitemizi kullanarak, çerezleri belirtilen kapsamda kullanmamızı kabul edersiniz.”
     </div>
 
-    <!-- Modal -->
-    <div id="modal" class="modal">
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
         <div class="modal-content">
-            <h2>KARANLIK GÜNEŞ</h2>
-            <p><strong>"Zalim Evlere Güneş Işığı Girmez"</strong></p>
-            <p>Köyde yaşayan bir ailenin hayatını anlatan bu dizi aynı zamanda gerçek hayat ile ilgili çok anlam taşır.</p>
-            <p>Aile üyelerinin adları:</p>
-            <ul>
-                <li>Nalan (anne)</li>
-                <li>Mercan (Nalan'ın kayınvalidesi, çocukların babaannesi)</li>
-                <li>Ezgi (Ceyda ve Halil'in ablası)</li>
-                <li>Ceyda (Ezgi'nin kardeşi, Halil'in ablası)</li>
-                <li>Halil (ailenin en küçüğü ama evin direği)</li>
-            </ul>
-            <p>Bu aile şanslıdır ve Zadegillerin köşküne giderler. Gitmelerinin sebebi vardır ama Ceyda ve babaannesi dışında o sebebi kimse bilmiyordur.</p>
-            <p>Zadegillerin köşkünde birçok yaşanacak olaylara şahit olacaksınız...</p>
-            <p><strong>Karanlık Güneş İlk Bölümüyle 2 Mart Pazar Akşamı S TV'de!</strong></p>
-            <button onclick="closeModal()">ANA SAYFA</button>
+            <video controls autoplay style="width: 100%; max-width: 800px;">
+                <source src="https://res.cloudinary.com/ddwjx4ra9/video/upload/v1737669284/njzh5jygbwzy7h0osarr.mp4" type="video/mp4">
+                Tarayıcınız video oynatmayı desteklemiyor.
+            </video>
+            <button onclick="closeVideoModal()">KAPAT</button>
         </div>
     </div>
 
     <script>
-        // Modal işlevleri
-        function showModal() {
-            document.getElementById('modal').style.display = 'flex';
+        // Video Modal işlevleri
+        function openVideo() {
+            document.getElementById('videoModal').style.display = 'flex';
         }
 
-        function closeModal() {
-            document.getElementById('modal').style.display = 'none';
+        function closeVideoModal() {
+            document.getElementById('videoModal').style.display = 'none';
         }
     </script>
 </body>

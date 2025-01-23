@@ -125,11 +125,51 @@
             background: rgba(0, 0, 0, 0.5);
             padding: 5px;
         }
+        .featured .shows .trailer {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .featured .shows .trailer a {
+            color: #e50914;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .featured .shows .trailer a:hover {
+            text-decoration: underline;
+        }
         .blinking {
             font-size: 18px;
             font-weight: bold;
             color: red;
             animation: blink 1s infinite;
+        }
+        .season-final {
+            font-size: 18px;
+            font-weight: bold;
+            color: #e50914;
+            animation: blink 1s infinite;
+        }
+        .trailers-section {
+            padding: 20px;
+            background-color: #1c1c1c;
+            margin-top: 20px;
+        }
+        .trailers-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .trailers-section .trailers {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+        }
+        .trailers-section .trailers .trailer-item {
+            text-align: center;
+        }
+        .trailers-section .trailers .trailer-item iframe {
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
         }
         .footer {
             padding: 20px;
@@ -178,6 +218,10 @@
                 font-size: 20px;
                 text-align: center;
             }
+            .trailers-section .trailers .trailer-item iframe {
+                width: 250px;
+                height: 150px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -204,6 +248,10 @@
             .footer {
                 font-size: 10px;
                 padding: 10px;
+            }
+            .trailers-section .trailers .trailer-item iframe {
+                width: 200px;
+                height: 120px;
             }
         }
     </style>
@@ -244,22 +292,45 @@
         <h2>ÖNE ÇIKANLAR</h2>
         <div class="shows">
             <div class="show-item">
-                <img alt="RUHSAT" src="https://i.ibb.co/XXFTMkQ/Ekran-g-r-nt-s-2025-01-23-144039.png" />
-                <div class="caption">RUHSAT</div>
+                <a href="https://youtube.com/playlist?list=PL7pVHCmv6g7wtOmVI69RP-67tOX-vT3LF&si=XwqRrjE-6NGSh7E2" target="_blank">
+                    <img alt="RUHSAT" src="https://i.ibb.co/XXFTMkQ/Ekran-g-r-nt-s-2025-01-23-144039.png" />
+                    <div class="caption">RUHSAT</div>
+                </a>
             </div>
             <div class="show-item">
-                <img alt="ATEŞTEN KAFES" src="https://i.ibb.co/VgdNGff/Ekran-g-r-nt-s-2025-01-23-155619.png" />
-                <div class="caption">ATEŞTEN KAFES</div>
+                <a href="https://youtube.com/playlist?list=PLHXGVMNzAlDG10DpB1SxQUsVIHDYtww-3&si=PVVIawMqIkh3WG0n" target="_blank">
+                    <img alt="ATEŞTEN KAFES" src="https://i.ibb.co/VgdNGff/Ekran-g-r-nt-s-2025-01-23-155619.png" />
+                    <div class="caption">ATEŞTEN KAFES</div>
+                    <div class="season-final">SEZON FİNALİ</div>
+                </a>
             </div>
             <div class="show-item">
-                <img alt="VATAN İÇİN" src="https://i.ibb.co/CQFNbwC/photo-5805174679307142925-y.jpg" />
-                <div class="caption">VATAN İÇİN</div>
+                <img alt="Yeni Poster" src="https://i.ibb.co/mSc0QwG/photo-5805174679307142976-y.jpg" />
+                <div class="caption">YENİ POSTER</div>
                 <div class="blinking">YAKINDA</div>
             </div>
             <div class="show-item">
                 <img alt="FANTASTİK SINIF" src="https://storage.googleapis.com/a1aa/image/74aUGstd24rzGR4KMZKC5VD8ponyeInzw1bsm1BkahKaCAEKA.jpg" />
                 <div class="caption">FANTASTİK SINIF</div>
                 <div class="blinking">YAKINDA</div>
+            </div>
+            <div class="show-item">
+                <img alt="KARANLIK GÜNEŞ" src="https://i.ibb.co/RT9MgVm/photo-5805174679307142979-y.jpg" />
+                <div class="caption">KARANLIK GÜNEŞ</div>
+                <div class="blinking">ÇOK YAKINDA</div>
+            </div>
+        </div>
+    </div>
+    <div class="trailers-section">
+        <h2>FRAGMANLAR</h2>
+        <div class="trailers">
+            <div class="trailer-item">
+                <iframe src="https://www.youtube.com/embed/Qj4WTkim6nk?si=zmMFMMGRVcoGL_Og" title="Karanlık Güneş Fragmanı" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="caption">Karanlık Güneş</div>
+            </div>
+            <div class="trailer-item">
+                <iframe src="https://www.youtube.com/embed/jk8oFB6jb88?si=RBFB3-eCC54gy9zJ" title="Ateşten Kafes Fragmanı" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="caption">Ateşten Kafes</div>
             </div>
         </div>
     </div>

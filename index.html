@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>TV Show Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #fff;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #000;
+        }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e50914;
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .navbar .menu a:hover {
+            text-decoration: underline;
+        }
+        .navbar .icons {
+            display: flex;
+            gap: 15px;
+        }
+        .navbar .icons i {
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #1c1c1c;
+        }
+        .hero img {
+            width: 100%;
+            height: auto;
+            opacity: 0.5;
+        }
+        .hero .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: left;
+        }
+        .hero .content h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        .hero .content p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .hero .content .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .hero .content .buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        .hero .content .buttons .watch {
+            background-color: #e50914;
+            color: #fff;
+        }
+        .hero .content .buttons .watch a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .hero .content .buttons .more {
+            background-color: #333;
+            color: #fff;
+        }
+        .featured {
+            padding: 20px;
+        }
+        .featured h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .featured .shows {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+        }
+        .featured .shows img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .featured .shows .show-item {
+            position: relative;
+            text-align: center;
+        }
+        .featured .shows .caption {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            font-size: 18px;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+        }
+        .blinking {
+            font-size: 18px;
+            font-weight: bold;
+            color: red;
+            animation: blink 1s infinite;
+        }
+        .footer {
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #aaa;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        /* Mobil uyumluluk */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .navbar .menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .navbar .menu a {
+                font-size: 16px;
+            }
+            .hero .content h1 {
+                font-size: 28px;
+            }
+            .hero .content p {
+                font-size: 16px;
+            }
+            .hero .content .buttons button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+            .featured .shows {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .featured .shows img {
+                width: 150px;
+                height: 200px;
+            }
+            .featured h2 {
+                font-size: 20px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar .menu a {
+                font-size: 14px;
+            }
+            .hero .content h1 {
+                font-size: 24px;
+            }
+            .hero .content p {
+                font-size: 14px;
+            }
+            .hero .content .buttons button {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            .featured .shows img {
+                width: 120px;
+                height: 160px;
+            }
+            .featured h2 {
+                font-size: 18px;
+            }
+            .footer {
+                font-size: 10px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">D-MEDIA</div>
+        <div class="menu">
+            <a href="#">DİZİLER</a>
+            <a href="#">PROGRAMLAR</a>
+            <a href="#">D HABER</a>
+            <a href="#">YAYIN AKIŞI</a>
+            <a href="#">DİĞER</a>
+        </div>
+        <div class="icons">
+            <i class="fas fa-bell"></i>
+            <i class="fas fa-user"></i>
+        </div>
+    </div>
+    <div class="hero">
+        <img alt="Hero background image" height="500" src="https://storage.googleapis.com/a1aa/image/74aUGstd24rzGR4KMZKC5VD8ponyeInzw1bsm1BkahKaCAEKA.jpg" width="1920"/>
+        <div class="content">
+            <h1>FANTASTİK SINIF</h1>
+            <p>YAKINDA - ilk BÖLÜM</p>
+            <div class="buttons">
+                <button class="watch">
+                    <a href="https://youtu.be/s7aWciy3ZVE?si=9zuKdlnE3Z8OtLN6" target="_blank">
+                        <i class="fas fa-play"></i> FRAGMANI İZLE
+                    </a>
+                </button>
+                <button class="more">
+                    <i class="fas fa-ellipsis-h"></i> DAHA FAZLA
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="featured">
+        <h2>ÖNE ÇIKANLAR</h2>
+        <div class="shows">
+            <div class="show-item">
+                <img alt="RUHSAT" src="https://i.ibb.co/XXFTMkQ/Ekran-g-r-nt-s-2025-01-23-144039.png" />
+                <div class="caption">RUHSAT</div>
+            </div>
+            <div class="show-item">
+                <img alt="ATEŞTEN KAFES" src="https://i.ibb.co/VgdNGff/Ekran-g-r-nt-s-2025-01-23-155619.png" />
+                <div class="caption">ATEŞTEN KAFES</div>
+            </div>
+            <div class="show-item">
+                <img alt="VATAN İÇİN" src="https://i.ibb.co/CQFNbwC/photo-5805174679307142925-y.jpg" />
+                <div class="caption">VATAN İÇİN</div>
+                <div class="blinking">YAKINDA</div>
+            </div>
+            <div class="show-item">
+                <img alt="FANTASTİK SINIF" src="https://storage.googleapis.com/a1aa/image/74aUGstd24rzGR4KMZKC5VD8ponyeInzw1bsm1BkahKaCAEKA.jpg" />
+                <div class="caption">FANTASTİK SINIF</div>
+                <div class="blinking">YAKINDA</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        “İnternet sitemizdeki deneyimlerinizi kişiselleştirmek amacıyla kullanılan çerezler bakımından tercihlerinizi nasıl yöneteceğinize (Çerez Politikası) üzerinden bakabilirsiniz, kişisel verilerinizle ilgili daha fazla bilgi için (Gizlilik Politikası’nı) ziyaret edebilirsiniz. Sitemizi kullanarak, çerezleri belirtilen kapsamda kullanmamızı kabul edersiniz.”
+    </div>
+</body>
+</html>

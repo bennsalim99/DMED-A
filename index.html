@@ -192,34 +192,6 @@
             font-size: 12px;
             color: #aaa;
         }
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        .modal-content {
-            background-color: #1c1c1c;
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 600px;
-            text-align: center;
-        }
-        .modal-content button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #e50914;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
         @keyframes blink {
             0% { opacity: 1; }
             50% { opacity: 0; }
@@ -304,7 +276,6 @@
         <div class="logo">D-MEDIA</div>
         <div class="menu">
             <a href="#">DİZİLER</a>
-            <a href="#" onclick="openVideo()">ÖZEL BÖLÜMLER</a>
         </div>
         <div class="icons">
             <i class="fas fa-bell"></i>
@@ -358,12 +329,24 @@
             <div class="show-item">
                 <img alt="KARANLIK GÜNEŞ" src="https://i.ibb.co/RT9MgVm/photo-5805174679307142979-y.jpg" />
                 <div class="caption">KARANLIK GÜNEŞ</div>
-                <div class="blinking" onclick="showModal()">ÇOK YAKINDA</div>
+                <div class="blinking">ÇOK YAKINDA</div>
             </div>
             <div class="show-item">
                 <img alt="GÜÇLÜ BAĞLAR" src="https://i.ibb.co/NnqGnpQ/photo-5805174679307143112-y.jpg" />
                 <div class="caption">GÜÇLÜ BAĞLAR</div>
                 <div class="release-date">21 ŞUBAT SALI</div>
+            </div>
+            <!-- Yeni Eklenen Dizi: Arena: Yaşam ve Ölüm -->
+            <div class="show-item">
+                <img alt="Arena: Yaşam ve Ölüm" src="https://i.ibb.co/BgVmgtb/photo-5807426479120827550-y.jpg" />
+                <div class="caption">Arena: Yaşam ve Ölüm</div>
+                <div class="release-date">HER CUMA</div>
+            </div>
+            <!-- Yeni Eklenen Dizi: Soyguncu Polise Yakalanırsa -->
+            <div class="show-item">
+                <img alt="Soyguncu Polise Yakalanırsa" src="https://i.ibb.co/HFpHSTK/photo-5812296100156130655-y.jpg" />
+                <div class="caption">Soyguncu Polise Yakalanırsa</div>
+                <div class="release-date">21 ŞUBAT CUMA</div>
             </div>
         </div>
     </div>
@@ -387,27 +370,5 @@
     <div class="footer">
         “İnternet sitemizdeki deneyimlerinizi kişiselleştirmek amacıyla kullanılan çerezler bakımından tercihlerinizi nasıl yöneteceğinize (Çerez Politikası) üzerinden bakabilirsiniz, kişisel verilerinizle ilgili daha fazla bilgi için (Gizlilik Politikası’nı) ziyaret edebilirsiniz. Sitemizi kullanarak, çerezleri belirtilen kapsamda kullanmamızı kabul edersiniz.”
     </div>
-
-    <!-- Video Modal -->
-    <div id="videoModal" class="modal">
-        <div class="modal-content">
-            <video controls autoplay style="width: 100%; max-width: 800px;">
-                <source src="https://res.cloudinary.com/ddwjx4ra9/video/upload/v1737669284/njzh5jygbwzy7h0osarr.mp4" type="video/mp4">
-                Tarayıcınız video oynatmayı desteklemiyor.
-            </video>
-            <button onclick="closeVideoModal()">KAPAT</button>
-        </div>
-    </div>
-
-    <script>
-        // Video Modal işlevleri
-        function openVideo() {
-            document.getElementById('videoModal').style.display = 'flex';
-        }
-
-        function closeVideoModal() {
-            document.getElementById('videoModal').style.display = 'none';
-        }
-    </script>
 </body>
 </html>

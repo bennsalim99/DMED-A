@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>TV Show Page</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>D-MEDIA Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* Ek stiller buraya gelecek */
         body {
-            margin: 0;
             font-family: 'Roboto', sans-serif;
-            background-color: #121212;
-            color: #fff;
+        }
+        #loginPage, #mainPage {
+            display: none;
         }
         .navbar {
             display: flex;
@@ -271,8 +273,77 @@
         }
     </style>
 </head>
-<body>
-    <div class="navbar">
+<body class="bg-gray-900 text-white">
+
+    <!-- Landing Page -->
+    <div id="landingPage" class="relative">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10">
+            <div class="flex justify-between items-center p-4">
+                <img alt="Disney+ logo" class="h-12" src="https://placehold.co/100x50"/>
+                <button onclick="showLoginPage()" class="bg-gray-800 text-white px-4 py-2 rounded">OTURUM AÇ</button>
+            </div>
+            <div class="text-center mt-20">
+                <h1 class="text-4xl font-bold">Yeni orijinal içerikler, gişe rekorlarını kıran filmler, soluksuz izleyeceğin diziler ve çok daha fazlası</h1>
+                <p class="mt-4">Dilediğin zaman iptal et.*</p>
+                <div class="mt-8 flex justify-center space-x-4">
+                    <div class="bg-gray-800 p-4 rounded">
+                        <p class="text-lg">D-MEDİA Aylık</p>
+                        <p class="text-2xl font-bold">164,90 TL/ay</p>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded">
+                        <p class="text-lg">D-MEDİA+ Yıllık</p>
+                        <p class="text-2xl font-bold">1.649,00 TL/yıl</p>
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-center space-x-4">
+                    <button class="bg-blue-500 text-white px-6 py-3 rounded">ŞİMDİ ÜYE OL</button>
+                    <button class="bg-blue-500 text-white px-6 py-3 rounded">ŞİMDİ ÜYE OL</button>
+                </div>
+                <p class="mt-4 text-sm">Yıllık üyeliği seç, aylık ödemeye kıyasla 10 ay fiyatına 12 ay izle.</p>
+                <p class="mt-2 text-xs">*fatura döneminin sonundan itibaren geçerlidir. Üyelik gereklidir. 12 Şubat 2025 itibarıyla, bu üyelik planları reklam içermeye başlayacaktır. Detaylı bilgi için: disneyplus.com/priceinfo. Paradise, 28 Ocak tarihinde yayında.</p>
+            </div>
+        </div>
+        <div class="absolute inset-0 z-0">
+            <div class="grid grid-cols-4 gap-2 p-4">
+                <!-- Resimler burada -->
+               <img alt="Movie poster 1" class="w-full h-full object-cover" src="https://i.ibb.co/QFZ1qxQ4/photo-5805174679307142976-y-1.jpg"/>
+                <img alt="Movie poster 2" class="w-full h-full object-cover" src="https://i.ibb.co/TB6jCB7p/photo-5805174679307142979-y-2.jpg"/>
+                <img alt="Movie poster 3" class="w-full h-full object-cover" src="https://i.ibb.co/rKPQP6fb/photo-5805174679307143112-y.jpg"/>
+                <img alt="Movie poster 4" class="w-full h-full object-cover" src="https://i.ibb.co/35Fz990V/photo-5805174679307143116-y-1.jpg"/>
+                <img alt="Movie poster 5" class="w-full h-full object-cover" src="https://i.ibb.co/bMYqW5KM/photo-5805174679307143117-y.jpg"/>
+                <img alt="Movie poster 6" class="w-full h-full object-cover" src="https://i.ibb.co/k2Pk9sjq/photo-5807426479120827550-y-2.jpg"/>
+                <img alt="Movie poster 7" class="w-full h-full object-cover" src="https://i.ibb.co/W4RNVzFV/photo-5812296100156130655-y-1.jpg"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Page -->
+    <div id="loginPage" class="bg-gray-100 font-roboto" style="display: none;">
+        <div class="min-h-screen flex items-center justify-center">
+            <div class="bg-white shadow-lg rounded-lg p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Log In</h2>
+                <form onsubmit="checkPassword(); return false;">
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                            Password
+                        </label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password">
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                            Log In
+                        </button>
+                    </div>
+                </form>
+                <div id="loginMessage" class="mt-4 text-red-500"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Page -->
+    <div id="mainPage" style="display: none;">
+       <div class="navbar">
         <div class="logo">D-MEDIA</div>
         <div class="menu">
             <a href="#">DİZİLER</a>
@@ -370,5 +441,28 @@
     <div class="footer">
         “İnternet sitemizdeki deneyimlerinizi kişiselleştirmek amacıyla kullanılan çerezler bakımından tercihlerinizi nasıl yöneteceğinize (Çerez Politikası) üzerinden bakabilirsiniz, kişisel verilerinizle ilgili daha fazla bilgi için (Gizlilik Politikası’nı) ziyaret edebilirsiniz. Sitemizi kullanarak, çerezleri belirtilen kapsamda kullanmamızı kabul edersiniz.”
     </div>
+    </div>
+
+    <script>
+        // Sayfa yüklendiğinde sadece landingPage gösterilsin
+        document.getElementById("landingPage").style.display = "block";
+
+        function showLoginPage() {
+            document.getElementById("landingPage").style.display = "none";
+            document.getElementById("loginPage").style.display = "block";
+            document.getElementById("mainPage").style.display = "none";
+        }
+
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            if (password === "dmedia") {
+                document.getElementById("landingPage").style.display = "none";
+                document.getElementById("loginPage").style.display = "none";
+                document.getElementById("mainPage").style.display = "block";
+            } else {
+                document.getElementById("loginMessage").textContent = "Hatalı şifre!";
+            }
+        }
+    </script>
 </body>
 </html>

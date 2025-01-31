@@ -12,7 +12,7 @@
         body {
             font-family: 'Roboto', sans-serif;
         }
-        #loginPage, #mainPage {
+        #loginPage, #mainPage, #videoPage {
             display: none;
         }
         .navbar {
@@ -281,7 +281,7 @@
         <div class="relative z-10">
             <div class="flex justify-between items-center p-4">
                 <img alt="Disney+ logo" class="h-12" src="https://placehold.co/100x50"/>
-                <button onclick="showLoginPage()" class="bg-gray-800 text-white px-4 py-2 rounded">OTURUM AÇ</button>
+                <button onclick="showVideoPage()" class="bg-gray-800 text-white px-4 py-2 rounded">OTURUM AÇ</button>
             </div>
             <div class="text-center mt-20">
                 <h1 class="text-4xl font-bold">Yeni orijinal içerikler, gişe rekorlarını kıran filmler, soluksuz izleyeceğin diziler ve çok daha fazlası</h1>
@@ -316,6 +316,14 @@
                 <img alt="Movie poster 7" class="w-full h-full object-cover" src="https://i.ibb.co/W4RNVzFV/photo-5812296100156130655-y-1.jpg"/>
             </div>
         </div>
+    </div>
+
+    <!-- Video Page -->
+    <div id="videoPage" class="bg-black flex items-center justify-center" style="display: none; height: 100vh;">
+        <video id="introVideo" width="640" height="360" controls autoplay>
+            <source src="https://res.cloudinary.com/ddwjx4ra9/video/upload/v1738323594/b0s052ezbmd4xcafzzbr.mp4" type="video/mp4">
+            Tarayıcınız video etiketini desteklemiyor.
+        </video>
     </div>
 
     <!-- Login Page -->
@@ -482,8 +490,20 @@
         // Sayfa yüklendiğinde sadece landingPage gösterilsin
         document.getElementById("landingPage").style.display = "block";
 
+        function showVideoPage() {
+            document.getElementById("landingPage").style.display = "none";
+            document.getElementById("videoPage").style.display = "flex";
+            document.getElementById("loginPage").style.display = "none";
+            document.getElementById("mainPage").style.display = "none";
+
+            // Video bittiğinde loginPage'i göster
+            var video = document.getElementById("introVideo");
+            video.addEventListener('ended', showLoginPage, false);
+        }
+
         function showLoginPage() {
             document.getElementById("landingPage").style.display = "none";
+            document.getElementById("videoPage").style.display = "none";
             document.getElementById("loginPage").style.display = "block";
             document.getElementById("mainPage").style.display = "none";
         }
@@ -492,6 +512,7 @@
             var password = document.getElementById("password").value;
             if (password === "dplus") { // Şifre "dplus" olarak değiştirildi
                 document.getElementById("landingPage").style.display = "none";
+                document.getElementById("videoPage").style.display = "none";
                 document.getElementById("loginPage").style.display = "none";
                 document.getElementById("mainPage").style.display = "block";
             } else {

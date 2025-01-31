@@ -348,6 +348,7 @@
         <div class="menu">
             <a href="#">DİZİLER</a>
             <a href="https://dizipal835.com/bolum/ojing-eo-geim-2x1" target="_blank">FİLM</a>
+            <a href="#" id="specialEpisodesButton">ÖZEL BÖLÜMLER</a>
         </div>
         <div class="icons">
             <i class="fas fa-bell"></i>
@@ -454,6 +455,24 @@
             </div>
         </div>
     </div>
+
+    <!-- Özel Bölümler için Yeni Bölüm -->
+    <div id="specialEpisodesSection" class="trailers-section" style="display: none;">
+        <h2>ÖZEL BÖLÜMLER</h2>
+        <div class="trailers">
+            <!-- Özel Bölüm 1 -->
+            <div class="trailer-item">
+                <iframe src="https://www.youtube.com/embed/owodkkf6UGg" title="Özel Bölüm 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="caption">Özel Bölüm 1</div>
+            </div>
+            <!-- Özel Bölüm 2 -->
+            <div class="trailer-item">
+                <iframe src="https://www.youtube.com/embed/8CWm_S-B1DU" title="Özel Bölüm 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="caption">Özel Bölüm 2</div>
+            </div>
+        </div>
+    </div>
+
     <div class="footer">
         “İnternet sitemizdeki deneyimlerinizi kişiselleştirmek amacıyla kullanılan çerezler bakımından tercihlerinizi nasıl yöneteceğinize (Çerez Politikası) üzerinden bakabilirsiniz, kişisel verilerinizle ilgili daha fazla bilgi için (Gizlilik Politikası’nı) ziyaret edebilirsiniz. Sitemizi kullanarak, çerezleri belirtilen kapsamda kullanmamızı kabul edersiniz.”
     </div>
@@ -479,6 +498,15 @@
                 document.getElementById("loginMessage").textContent = "Hatalı şifre!";
             }
         }
+
+        // Özel Bölümler butonu için event listener ekle
+        document.getElementById("specialEpisodesButton").addEventListener("click", function() {
+            // Özel Bölümler bölümünü göster
+            document.getElementById("specialEpisodesSection").style.display = "block";
+            // Diğer bölümleri gizle (isteğe bağlı)
+            // document.getElementById("trailers-section").style.display = "none";
+            // document.getElementById("featured").style.display = "none";
+        });
     </script>
 </body>
 </html>
